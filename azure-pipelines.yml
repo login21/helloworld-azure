@@ -39,4 +39,5 @@ jobs:
             - bash: |
                 # Modify deployment script based on the app type
                 echo "Starting deployment script run"
-                sudo java -jar '$(Pipeline.Workspace)/drop/target/spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar'
+                sudo cp '$(Pipeline.Workspace)/drop/target/MySampleProject-0.0.1-SNAPSHOT.war' '/opt/tomcat/webapps/'
+                sudo systemctl restart tomcat
